@@ -1,0 +1,8 @@
+# Legacy PHP reference files from the old site — not part of the static build
+index.php
+pages/
+includes/
+components/
+.thumbnail
+github.md
+dist/

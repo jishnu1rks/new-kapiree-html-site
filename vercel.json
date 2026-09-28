@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "node build.mjs",
+  "outputDirectory": "dist",
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/blogs/:slug", "destination": "/blogs.html" },
+    { "source": "/:page(about|pricing|hiring|faq|blogs|customer-stories|privacy-policy|terms-of-service)", "destination": "/:page.html" }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/:page(about|pricing|hiring|faq|blogs|customer-stories|privacy-policy|terms-of-service).html", "destination": "/:page", "permanent": true },
+    { "source": "/index.php", "destination": "/", "permanent": true },
+    { "source": "/features", "destination": "/hiring", "permanent": true },
+    { "source": "/products", "destination": "/", "permanent": true },
+    { "source": "/report-sample", "destination": "/hiring", "permanent": true },
+    { "source": "/:page(pricing_3|pricing-3)", "destination": "/pricing", "permanent": true },
+    { "source": "/blog-details", "destination": "/blogs", "permanent": true },
+    { "source": "/book-demo", "destination": "/#book-demo", "permanent": false },
+    { "source": "/contact", "destination": "/#contact", "permanent": false },
+    { "source": "/pages/:page.php", "destination": "/:page", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/(assets|uploads|_ds)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    }
+  ]
+}
