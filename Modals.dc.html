@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-4aed9d00-ade3-47d4-a294-39db364dc93d/styles.css">
+<script src="_ds/modernist-4aed9d00-ade3-47d4-a294-39db364dc93d/_ds_bundle.js"></script>
+</helmet>
+<sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-modal="true" aria-labelledby="modal-title" onClick="{{ backdrop }}" style="position: fixed; inset: 0; z-index: 1000; background: color-mix(in srgb, var(--color-text) 60%, transparent); display: flex; align-items: flex-start; justify-content: center; padding: clamp(16px, 6vh, 72px) 16px; overflow-y: auto; font-family: var(--font-body); color: var(--color-text);">
+    <div onClick="{{ stop }}" style="width: 100%; max-width: 560px; background: var(--color-bg); border: 2px solid var(--color-text); box-shadow: var(--shadow-lg);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 24px 24px 20px; border-bottom: 2px solid var(--color-text);">
+        <div>
+          <span style="font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; color: var(--color-accent-700);">{{ kicker }}</span>
+          <h2 id="modal-title" style="font-family: var(--font-heading); font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -0.02em; margin: 8px 0 0;">{{ title }}</h2>
+          <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 80%, transparent);">{{ sub }}</p>
+        </div>
+        <button type="button" aria-label="Close" onClick="{{ close }}" style="flex: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: none; border: 2px solid var(--color-divider); cursor: pointer; color: var(--color-text);" style-hover="border-color: var(--color-text);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"></path></svg></button>
+      </div>
+
+      <sc-if value="{{ done }}">
+        <div style="padding: 32px 24px; display: flex; flex-direction: column; gap: 16px;">
+          <span style="width: 48px; height: 48px; background: var(--color-accent); color: var(--color-bg); display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"></path></svg></span>
+          <h3 style="font-family: var(--font-heading); font-weight: 800; font-size: 22px; margin: 0;">{{ doneTitle }}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6;">{{ doneText }}</p>
+          <button type="button" class="btn btn-secondary" onClick="{{ close }}" style="align-self: flex-start;">Close</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showForm }}">
+        <form onSubmit="{{ submit }}" noValidate="{{ true }}" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+          <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="f-name" style="font-size: 14px; font-weight: 600;">Full name</label>
+            <input id="f-name" class="input" type="text" autoComplete="name" value="{{ v.name }}" onChange="{{ set.name }}" placeholder="Jane Doe" style="width: 100%; box-sizing: border-box;">
+            <sc-if value="{{ e.name }}"><span style="font-size: 13px; color: var(--color-accent-700);">{{ e.name }}</span></sc-if>
+          </div>
+          <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="f-email" style="font-size: 14px; font-weight: 600;">{{ emailLabel }}</label>
+            <input id="f-email" class="input" type="email" autoComplete="email" value="{{ v.email }}" onChange="{{ set.email }}" placeholder="jane@yourcompany.com" style="width: 100%; box-sizing: border-box;">
+            <sc-if value="{{ e.email }}"><span style="font-size: 13px; color: var(--color-accent-700);">{{ e.email }}</span></sc-if>
+          </div>
+          <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+            <label for="f-phone" style="font-size: 14px; font-weight: 600;">Phone number</label>
+            <input id="f-phone" class="input" type="tel" autoComplete="tel" value="{{ v.phone }}" onChange="{{ set.phone }}" placeholder="+91 98765 43210" style="width: 100%; box-sizing: border-box;">
+            <sc-if value="{{ e.phone }}"><span style="font-size: 13px; color: var(--color-accent-700);">{{ e.phone }}</span></sc-if>
+          </div>
+
+          <sc-if value="{{ isLead }}">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+              <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="f-company" style="font-size: 14px; font-weight: 600;">Company name</label>
+                <input id="f-company" class="input" type="text" autoComplete="organization" value="{{ v.company }}" onChange="{{ set.company }}" placeholder="Acme Pvt Ltd" style="width: 100%; box-sizing: border-box;">
+                <sc-if value="{{ e.company }}"><span style="font-size: 13px; color: var(--color-accent-700);">{{ e.company }}</span></sc-if>
+              </div>
+              <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+                <label for="f-size" style="font-size: 14px; font-weight: 600;">Company size</label>
+                <select id="f-size" class="input" value="{{ v.size }}" onChange="{{ set.size }}" style="width: 100%; box-sizing: border-box;">
+                  <option value="1-10">1–10 employees</option>
+                  <option value="11-50">11–50 employees</option>
+                  <option value="51-200">51–200 employees</option>
+                  <option value="201-500">201–500 employees</option>
+                  <option value="500+">500+ employees</option>
+                </select>
+              </div>
+            </div>
+            <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+              <label style="font-size: 14px; font-weight: 600;">Interested in</label>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <sc-for list="{{ interests }}" as="it" hint-placeholder-count="3">
+                  <button type="button" onClick="{{ it.toggle }}" aria-pressed="{{ it.on }}" style="font: inherit; font-size: 14px; padding: 8px 12px; cursor: pointer; border: 2px solid {{ it.border }}; background: {{ it.bg }}; color: {{ it.color }};">{{ it.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div class="field" style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="f-msg" style="font-size: 14px; font-weight: 600;">{{ msgLabel }}</label>
+              <textarea id="f-msg" class="input" rows="3" value="{{ v.message }}" onChange="{{ set.message }}" placeholder="{{ msgPlaceholder }}" style="width: 100%; box-sizing: border-box; resize: vertical; font: inherit;"></textarea>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ isSignup }}">
+            <label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; cursor: pointer;">
+              <input type="checkbox" checked="{{ v.agree }}" onChange="{{ set.agree }}" style="margin-top: 3px; accent-color: var(--color-accent); width: 16px; height: 16px;">
+              <span>I agree to the <a href="Terms.dc.html" style="color: var(--color-accent-700); font-weight: 600;">Terms of Service</a> and <a href="Privacy.dc.html" style="color: var(--color-accent-700); font-weight: 600;">Privacy Policy</a>.</span>
+            </label>
+            <sc-if value="{{ e.agree }}"><span style="font-size: 13px; color: var(--color-accent-700); margin-top: -8px;">{{ e.agree }}</span></sc-if>
+          </sc-if>
+
+          <button type="submit" class="btn btn-primary btn-block" style="justify-content: space-between; margin-top: 4px;">{{ cta }} <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+          <sc-if value="{{ isSignup }}">
+            <p style="margin: 0; font-size: 14px;">Already have an account? <a href="https://hrm.neointeraction.com/login" target="_blank" rel="noopener" style="font-weight: 700; color: var(--color-accent-700);">Log in</a></p>
+          </sc-if>
+          <sc-if value="{{ isLead }}">
+            <p style="margin: 0; font-size: 13px; color: color-mix(in srgb, var(--color-text) 72%, transparent);">We'll only use these details to get back to you. See our <a href="Privacy.dc.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a>.</p>
+          </sc-if>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:&quot;700px&quot;}}">
+class Component extends DCLogic {
+  state = { kind: null, done: false, v: this.blank(), e: {} };
+  blank() { return { name: "", email: "", phone: "", company: "", size: "11-50", message: "", agree: false, interests: ["HRMS"] }; }
+  free = ["gmail.com","yahoo.com","hotmail.com","outlook.com","live.com","aol.com","icloud.com","me.com","msn.com","proton.me","protonmail.com","yandex.com","mail.com","gmx.com","rediffmail.com","ymail.com","zoho.com"];
+  componentDidMount() {
+    this.onClick = (ev) => {
+      const a = ev.target.closest && ev.target.closest('a[href$="#book-demo"], a[href$="#contact"], a[href$="#get-started"]');
+      if (!a) return;
+      const href = a.getAttribute("href");
+      const local = href.startsWith("#");
+      if (!local && !href.startsWith(location.pathname.split("/").pop())) return;
+      ev.preventDefault();
+      this.open(href.split("#")[1]);
+    };
+    this.onKey = (ev) => { if (ev.key === "Escape" && this.state.kind) this.close(); };
+    document.addEventListener("click", this.onClick);
+    document.addEventListener("keydown", this.onKey);
+    const h = location.hash.slice(1);
+    if (["book-demo", "contact", "get-started"].includes(h)) this.open(h);
+  }
+  componentWillUnmount() { document.removeEventListener("click", this.onClick); document.removeEventListener("keydown", this.onKey); document.body.style.overflow = ""; }
+  open(k) { const map = { "book-demo": "demo", contact: "contact", "get-started": "signup" }; this.setState({ kind: map[k], done: false, e: {}, v: this.blank() }); document.body.style.overflow = "hidden"; }
+  close() { this.setState({ kind: null }); document.body.style.overflow = ""; }
+  validate() {
+    const { v, kind } = this.state, e = {};
+    if (v.name.trim().length < 2) e.name = "Please enter your full name.";
+    const m = v.email.trim().toLowerCase().match(/^[^\s@]+@([^\s@]+\.[^\s@]+)$/);
+    if (!m) e.email = "Please enter a valid email address.";
+    else if ((kind === "signup" || kind === "demo") && this.free.includes(m[1])) e.email = "Please use your company email address.";
+    if (v.phone.replace(/\D/g, "").length < 7) e.phone = "Please enter a valid phone number.";
+    if (kind !== "signup" && !v.company.trim()) e.company = "Please enter your company name.";
+    if (kind === "signup" && !v.agree) e.agree = "Please accept the terms to continue.";
+    return e;
+  }
+  renderVals() {
+    const { kind, done, v, e } = this.state;
+    const copy = {
+      demo: { kicker: "Book a demo", title: "See Kapiree in action", sub: "Tell us a little about your team and we'll set up a 30-minute walkthrough.", cta: "Request demo", emailLabel: "Work email", msgLabel: "Anything we should know? (optional)", msgPh: "Hiring volume, current tools, goals…", doneTitle: "Thanks, we'll be in touch.", doneText: "Our team will reach out within one business day to schedule your demo." },
+      contact: { kicker: "Contact us", title: "Talk to our team", sub: "Questions about Kapiree, pricing or partnerships? Send us a note.", cta: "Send message", emailLabel: "Email", msgLabel: "Message", msgPh: "How can we help?", doneTitle: "Message sent.", doneText: "Thanks for reaching out. We'll reply to your email shortly." },
+      signup: { kicker: "Get started", title: "Create your Kapiree account", sub: "Start with the HRMS. Add Hiring whenever you're ready.", cta: "Create account", emailLabel: "Company email", doneTitle: "Check your inbox.", doneText: "We've sent a verification link to your company email. Click it to activate your account." }
+    }[kind] || {};
+    const setter = (k) => (ev) => { const val = ev.target.type === "checkbox" ? ev.target.checked : ev.target.value; this.setState(s => ({ v: { ...s.v, [k]: val }, e: { ...s.e, [k]: undefined } })); };
+    return {
+      isOpen: !!kind, done, showForm: !done,
+      isLead: kind === "demo" || kind === "contact", isSignup: kind === "signup",
+      kicker: copy.kicker, title: copy.title, sub: copy.sub, cta: copy.cta, emailLabel: copy.emailLabel,
+      msgLabel: copy.msgLabel, msgPlaceholder: copy.msgPh, doneTitle: copy.doneTitle, doneText: copy.doneText,
+      v, e,
+      set: { name: setter("name"), email: setter("email"), phone: setter("phone"), company: setter("company"), size: setter("size"), message: setter("message"), agree: setter("agree") },
+      interests: ["HRMS", "Hiring add-on", "AI Assistant"].map(l => {
+        const on = v.interests.includes(l);
+        return { label: l, on, bg: on ? "var(--color-accent-2)" : "transparent", color: on ? "var(--color-bg)" : "var(--color-text)", border: on ? "var(--color-accent-2)" : "var(--color-divider)",
+          toggle: () => this.setState(s => ({ v: { ...s.v, interests: on ? s.v.interests.filter(x => x !== l) : [...s.v.interests, l] } })) };
+      }),
+      submit: (ev) => { ev.preventDefault(); const err = this.validate(); if (Object.keys(err).length) this.setState({ e: err }); else this.setState({ done: true }); },
+      close: () => this.close(),
+      backdrop: () => this.close(),
+      stop: (ev) => ev.stopPropagation()
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+# Kapiree
+
+> Kapiree is an all-in-one HRMS (human resource management system) and people and work management platform for small and medium-sized businesses. It brings attendance, leave, projects, meetings, payroll, performance, incentives and an AI Assistant into one platform, with an optional AI-powered Hiring add-on for video interviews and pre-screening.
+
+Key facts:
+- Audience: growing small and medium-sized businesses (SMBs), HR teams, managers and employees.
+- Pricing: free trial (₹0, no payment required); HRMS subscription ₹110 per employee per month, billed monthly or annually; Hiring add-on ₹2,250 per month, available after subscribing to the HRMS.
+- Employees get their own login for attendance, leave, payslips and self-service HR. Access is role-based.
+- The AI Assistant answers everyday HR questions in natural language, e.g. leave balance, who is on leave, attendance, payslips and policies.
+- Sign up: https://hrm.neointeraction.com/signup · Log in: https://hrm.neointeraction.com/login · Contact: info@kapiree.com
+
+## HRMS modules
+- Attendance & Time Tracking: employees clock in/out and view timesheets; managers review and approve attendance requests.
+- Leave Management: employees apply for and track leave; managers approve; includes leave policies and holiday calendar.
+- People & Work Management: create, track and manage projects assigned to employees or teams, with project details (tasks, timeline, members).
+- Meetings: schedule, view and manage internal meetings, notes and agendas.
+- Payroll & Payslips: payroll processing, salary adjustments, payroll reports and employee payslip access.
+- Performance Engine: review cycles, goal setting (OKRs), 1:1 check-ins, reviews and calibration.
+- Incentives: manage employee incentive programs and bonus payouts.
+- AI Assistant: conversational assistant for quick HR answers and routine tasks.
+
+## Hiring add-on
+- AI video interviews and automated pre-screening; recruiters can review 10x more candidates and reduce time-to-hire by up to 50%.
+- Job management, candidate management, applicant tracking, candidate pipeline, interview management, hiring workflows, offer management.
+- AI interview analysis (confidence, clarity, relevance), AI transcripts, multilingual interviews, custom questions, website career-page integration and API integration.
+- Monthly AI credits included; additional credits can be purchased.
+
+## Pages
+- [Home](https://www.kapiree.com/): overview of the HRMS and AI Assistant
+- [Hiring](https://www.kapiree.com/hiring): video interview and pre-screening software
+- [Pricing](https://www.kapiree.com/pricing): free trial, HRMS and Hiring add-on pricing, pricing FAQ
+- [About](https://www.kapiree.com/about): mission and why an HR system matters
+- [FAQ](https://www.kapiree.com/faq): 20 common questions about the platform
+- [Blog](https://www.kapiree.com/blogs): recruitment and HR guides and case studies
+
+## Blog
+- [Case study – How a Design Agency Accelerated Their Hiring Process with Kapiree’s Pre-Screening Video Interview Platform](https://www.kapiree.com/blogs/neointeraction): Learn how a top design firm focused on UI/UX design accelerated their hiring process and achieved a 50% reduction in time-to-hire using Kapiree.
+- [Case study - How Cubet Techno Labs Transformed Their Recruitment Process with Kapiree’s Pre-Screening Video Interview Platform](https://www.kapiree.com/blogs/cubet): Discover how Cubet Techno Labs transformed their recruitment process, achieving a 60% reduction in time-to-hire and 75% improvement in candidate filtering accuracy.
+- [Pre-Interview Screening: What It Is and Why It Matters?](https://www.kapiree.com/blogs/pre-interview-screening): Discover the importance of pre-interview screening in recruitment. Learn how this process boosts efficiency, quality of hire, and overall hiring success.
+- [What Are the Challenges of Video Interviews and How Can You Overcome Them?](https://www.kapiree.com/blogs/video-interviews-challenges): Discover the common challenges of video interviews in hiring, including technical issues, lack of personal interaction, and bias, and learn how to overcome them.
+- [The Rise of Video Interviews: Are They Beneficial for Modern Hiring?](https://www.kapiree.com/blogs/benefits-for-modern-hiring): Discover the advantages and challenges of video interviews in modern recruitment processes. Learn how this trend is reshaping hiring practices.
+- [Is Pre Screening the Key to Streamlining Your Hiring Process?](https://www.kapiree.com/blogs/benefits-of-prescreening-hiring-process): Discover how pre screening candidates can optimize your hiring process, saving valuable time and resources while enhancing candidate quality.
+- [What Are the Top 10 Interview Questions to Ask Using Your Hiring App?](https://www.kapiree.com/blogs/top-10-interview-questions): Discover the top 10 interview questions to ask candidates using your hiring app to streamline your recruitment process and find the best talent efficiently.
+- [5 Ways to Boost Candidate Engagement in the Recruitment Process](https://www.kapiree.com/blogs/5-tips-to-boost-candidate-engagement): Enhance your hiring strategy with these 5 effective ways to boost candidate engagement in the recruitment process. Learn how to attract, engage, and retain top talent effortlessly.
+- [How Effective Are Video Interviews for Pre-Screening Candidates?](https://www.kapiree.com/blogs/effectiveness-of-video-pre-screening): An efficient pre-screening process is crucial for identifying top talent. Video interview software has emerged as a powerful tool to streamline this stage, offering numerous benefits over traditional methods.
+- [Are Video Interviews Effective in Modern Hiring? Understanding the Challenges](https://www.kapiree.com/blogs/effectiveness-of-video-interviews-in-hiring): Video interviews streamline hiring but face challenges like technical issues and lack of personal touch. Overcoming these ensures effective candidate assessment.
+- [What Are Organizational Hiring Challenges?](https://www.kapiree.com/blogs/challenges-in-organizational-hiring): Hiring challenges like talent shortage, budget constraints, and cultural fit issues can hinder organizational growth. Addressing these effectively ensures successful recruitment.
+- [5 Tips for Optimizing Your Recruiting Process](https://www.kapiree.com/blogs/5-tips-to-optimize-recruiting): Streamline your hiring with these 5 essential tips for optimizing your recruiting process. Enhance efficiency, attract top talent, and make smarter hiring decisions.
+
+## Legal
+- [Privacy Policy](https://www.kapiree.com/privacy-policy)
+- [Terms of Service](https://www.kapiree.com/terms-of-service)

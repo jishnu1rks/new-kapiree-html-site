@@ -1,0 +1,78 @@
+# Kapiree — search and AI crawler access
+User-agent: *
+Allow: /
+Disallow: /customer-stories
+
+User-agent: GPTBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /customer-stories
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Claude-User
+Allow: /
+Disallow: /customer-stories
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /customer-stories
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Bingbot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: CCBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /customer-stories
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Disallow: /customer-stories
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /customer-stories
+
+User-agent: YouBot
+Allow: /
+Disallow: /customer-stories
+
+Sitemap: https://www.kapiree.com/sitemap.xml
